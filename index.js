@@ -50,16 +50,12 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     // await client.connect();
 
-    const classesCollection = client
-      .db("summer-wonderland")
-      .collection("classes");
-    const usersCollection = client.db("summer-wonderland").collection("users");
+    const classesCollection = client.db("Summer-camp").collection("classes");
+    const usersCollection = client.db("Summer-camp").collection("users");
     const selectedClassCollection = client
-      .db("summer-wonderland")
+      .db("Summer-camp")
       .collection("selectedClass");
-    const paymentCollection = client
-      .db("summer-wonderland")
-      .collection("payment");
+    const paymentCollection = client.db("Summer-camp").collection("payments");
 
     app.post("/jwt", (req, res) => {
       const user = req.body;
