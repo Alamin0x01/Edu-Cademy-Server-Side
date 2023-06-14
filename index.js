@@ -119,7 +119,7 @@ async function run() {
       res.send(result);
     });
 
-    // Get classes data on enrolled descending order
+    // Get Classes data on enrolled descending order
     app.get("/popularClasses", async (req, res) => {
       const query = { status: "approved" };
       const options = { sort: { enrolled: -1 } };
