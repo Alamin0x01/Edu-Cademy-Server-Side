@@ -106,7 +106,7 @@ async function run() {
       res.send(result);
     });
 
-    // Get all classes from the database (admin)
+    // Get all classes from the database (Admin)
     app.get("/allclasses", verifyJWT, verifyAdminJWT, async (req, res) => {
       const result = await classesCollection.find({}).toArray();
       res.send(result);
