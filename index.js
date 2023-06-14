@@ -92,7 +92,7 @@ async function run() {
       next();
     };
 
-    // Add users to the database
+    // Add users to the Database
     app.post("/adduser", async (req, res) => {
       const user = req.body;
       const query = { email: user.email };
