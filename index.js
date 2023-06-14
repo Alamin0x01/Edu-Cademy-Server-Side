@@ -151,11 +151,9 @@ async function run() {
     // Check if user is a student
     app.get("/isStudent/:email", verifyJWT, async (req, res) => {
       const email = req.params.email;
-
       if (req.decoded.email !== email) {
         res.send({ student: false });
       }
-
       const query = { email: email };
       const user = await usersCollection.findOne(query);
       const result = { student: user?.role === "student" };
