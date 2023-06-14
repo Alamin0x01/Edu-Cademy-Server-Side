@@ -415,9 +415,9 @@ async function run() {
 run().catch(console.dir);
 
 app.get("/", (req, res) => {
-  res.send("Summer Wonderland is running");
+  res.send("Edu-Cademy is running");
 });
 
 app.listen(port, () => {
-  console.log(`Summer Wonderland running at:${port}`);
+  console.log(`Edu-Cademy running at:${port}`);
 });
