@@ -237,12 +237,10 @@ async function run() {
     app.post("/payment", verifyJWT, async (req, res) => {
       const payment = req.body;
       const insertResult = await paymentCollection.insertOne(payment);
-
       const deleteQuery = {
         _id: new ObjectId(payment.selectedClassId),
       };
       const deleteResult = await selectedClassCollection.deleteOne(deleteQuery);
-
       const updateQuery = {
         _id: new ObjectId(payment.classId),
       };
@@ -259,7 +257,6 @@ async function run() {
           $inc: { available_seats: -1 },
         }
       );
-
       const classId = payment.classId;
       const query = { _id: new ObjectId(classId) };
 
@@ -323,7 +320,7 @@ async function run() {
     });
 
     // Instructor Routes
-    // Post class to the database
+
     app.post("/addClass", verifyJWT, verifyInstructorJWT, async (req, res) => {
       const newClass = req.body;
       const result = await classesCollection.insertOne(newClass);
