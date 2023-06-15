@@ -1,1 +1,5 @@
-# b7a12-summer-camp-server_side-Alamin0x01
+# Edu-Cademy
+
+## Visit server site: https://summer-camp-server-side-six.vercel.app/
+
+###
