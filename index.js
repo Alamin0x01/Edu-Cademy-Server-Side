@@ -283,6 +283,7 @@ async function run() {
     });
 
     // Get paid classes from the database by email
+
     app.get("/paidClasses", verifyJWT, async (req, res) => {
       const email = req.query.email;
       if (!email) {
@@ -320,7 +321,6 @@ async function run() {
     });
 
     // Instructor Routes
-
     app.post("/addClass", verifyJWT, verifyInstructorJWT, async (req, res) => {
       const newClass = req.body;
       const result = await classesCollection.insertOne(newClass);
